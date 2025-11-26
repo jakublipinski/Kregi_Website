@@ -1,0 +1,4 @@
+url: "https://warsztat.schoolofexperiences.org"
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from  

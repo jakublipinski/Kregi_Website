@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/favicon/manifest.json" />
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+    <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Map -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" />
+    
+    <!-- 
+      Color mode switch
+      - For demonstration purposes only
+      - If you do not have the possibility to store user preferences on the backend, I highly recommend switching to a media query implementation: https://getbootstrap.com/docs/5.3/customize/color-modes/#building-with-sass
+    -->
+    <script>
+      (() => {
+        window.addEventListener('DOMContentLoaded', () => {
+          const colorModeSwitch = document.getElementById('colorModeSwitch');
+          if (colorModeSwitch) {
+            colorModeSwitch.addEventListener('change', () => {
+              document.body.setAttribute('data-bs-theme', colorModeSwitch.checked ? 'dark' : 'light');
+            });
+          }
+        });
+      })();
+    </script>
+    
+    <!-- Title -->
+    <title>Kręgi Głębokiego Przywództwa</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark navbar-expand-lg navbar-togglable fixed-top">
+      <div class="container">
+        <!-- Navbar brand (mobile) -->
+        <a class="navbar-brand d-lg-none" href="./index.html">Warsztat</a>
+    
+        <!-- Navbar toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Navbar collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!-- Navbar nav -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " href="#dlaczego">Dlaczego?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#cele">Cele</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#metody">Metody</a>
+            </li>
+          </ul>
+    
+          <!-- Navbar brand -->
+          <a class="navbar-brand d-none d-lg-flex mx-lg-auto" href="./index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Warsztat </a>
+    
+          <!-- Navbar nav -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " href="#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#plan">Plan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#kimjestesmy">Kim jesteśmy?</a>
+            </li>
+          </ul>
+    
+          <!-- Color mode -->
+          <div class="form-check form-switch form-switch-color-mode ms-lg-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="colorModeSwitch" />
+            <label class="form-check-label" for="colodeModeSwitch"></label>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- WELCOME -->
+    <header data-jarallax data-speed=".8" style="background-image: url(assets/img/1.jpg)">
+      <div class="d-flex flex-column min-vh-100 bg-black bg-opacity-75 pt-10 pt-md-8 pb-7 pb-md-0">
+        <div class="container my-auto">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+              <!-- Preheading -->
+              <h6 class="text-xs text-white text-opacity-75"><span class="text-primary">Ja</span> / Grupa</h6>
+
+              <!-- Heading -->
+              <h1 class="display-1 text-white mb-4">Warsztat. Kręgi Głębokiej Pracy</h1>
+
+              <!-- Subheading -->
+              <p class="text-center text-white text-opacity-75 mb-7">
+                Jak podjąć kolejne ważne wyzwanie? Razem. Kręgi głębokiej pracy są całościowym doświadczeniem, które Cię do tego przygotuje.
+              </p>
+
+              <!-- Button -->
+              <a class="btn btn-outline-light text-white text-primary-hover mb-7 mb-md-0" href="#zapiszsie"> Zapisz się</a>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <!-- Social links -->
+              <ul class="list-inline text-center text-md-start mb-3 my-md-5">
+                <li class="list-inline-item">
+                  <a class="text-white text-opacity-75 text-primary-hover" href="https://www.linkedin.com/company/lead-school-of-experiences/">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <!-- Address -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- DISCOVER -->
+    <section class="pt-7 pt-md-9">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Media -->
+            <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+              <!-- Border -->
+              <div class="media-decoration-border" data-jarallax-element="-40"></div>
+
+              <!-- Image -->
+              <img class="media-decoration-img img-fluid" src="assets/img/2.jpg" alt="..." />
+            </div>
+          </div>
+          <div class="col-md-5 align-self-center mx-auto">
+            <!-- Heading -->
+            <h2 class="mb-2"><em>Zatrzymaj się</em> by iść dalej</h2>
+
+            <!-- Text -->
+            <p class="mb-0">
+              Kręgi głębokiego przywództwa to czterodniowy program dla mężczyzn, którzy przed podjęciem kolejnego kroku, chcą połączyć działanie z refleksją, siłę z mądrością, własną pracę ze wsparciem innych mężczyzn.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCOVER -->
+    <section class="py-7 py-md-9">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 order-md-3">
+            <!-- Media -->
+            <div class="media-decoration media-decoration-1 mb-5 mb-md-0">
+              <!-- Solid -->
+              <div class="media-decoration-solid" data-jarallax-element="-40"></div>
+
+              <!-- Border -->
+              <div class="media-decoration-border" data-jarallax-element="-40"></div>
+
+              <!-- Image -->
+              <img class="media-decoration-img img-fluid" src="assets/img/3.jpg" alt="..." />
+            </div>
+          </div>
+          <div class="col-md-5 order-md-1 align-self-center mx-auto">
+            <!-- Heading -->
+            <h2 class="mb-2"><em>Ja</em> dla innych</h2>
+
+            <!-- Text -->
+            <p class="mb-0">
+              Spotykamy się w jednym z najpiękniejszych zakątków Warmii. Budujemy męskie relacje, pracujemy w drewnie, eksplorujemy siebie i okoliczne lasy. Rąbiemy, palimy, budujemy, rozmawiamy, wspieramy się. Powracamy do prostoty. Odkrywamy przywództwo, które zaczyna się od nas samych – dla dobra ludzi, za których bierzemy odpowiedzialność.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section data-jarallax data-speed=".8" style="background-image: url(assets/img/4.jpg)">
+      <div class="min-vh-100 py-7 py-md-7 bg-gradient-bottom-end-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <article class="pt-6 pt-md-8 pb-8 border-bottom" id="dlaczego">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <!-- Heading -->
+            <h1 class="mb-3">Kiedy i dlaczego teraz?</h1>
+  
+            <!-- Subheading -->
+            <p class="mb-6">Jak zatrzymać się w biegu, odzyskać głęboką uwagę i odkryć prawdziwe wyzwanie życia – nie w samotności, ale we wspólnocie. </p>
+          </div>
+      </div>        
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+            <!-- Text -->
+            <p>
+              Po trzydziestce w życiu mężczyzny następuje ważna zmiana, która określa, kim będzie i jakie dziedzictwo – przez kolejne lata i dekady – zbuduje. Tę zmianę należy dobrze i świadomie przeżyć. W medycynie i finansach szczyt zawodowej formy zwykle przypada na drugą połowę trzydziestki, u pisarzy – na pierwsze lata po czterdziestce, u naukowców – około czterdziestego piątego roku życia. Wielu mężczyzn przyzwyczajonych do sukcesów reaguje na pierwsze oznaki spadku formy w najprostszy sposób: pracują jeszcze więcej. Ale im mocniej gonimy za kolejnym osiągnięciem, tym mniej mamy przestrzeni, by zrobić to, co naprawdę konieczne: odkryć, gdzie leży nasze prawdziwe wyzwanie i jaka jest nasza prawdziwa siła.
+            </p>
+            <p>
+              Czy chcesz się do tej zmiany dopiero przygotować, czy już ją przeżyłeś, za każdym razem potrzebujesz się zatrzymać, żeby zrozumieć miejsce, w którym jesteś. Bo właśnie z tego miejsca zrobisz kolejny krok. Wymogi współczesnej pracy często zabierają nam nasz najcenniejszy zasób: uwagę. Uwaga staje się rozproszona, wybiórcza – albo znów obsesyjnie skupiona na pracy czy osiągnięciach. Ten typ uwagi jest niezbędny do odnoszenia sukcesów, ale nie daje nam poczucia spełnienia, przynależności i szczęścia. Pozwala nam rozwiązywać niezliczone problemy, ale w końcu traktuje nas samych jako jeden z problemów do rozwiązania. Sprawia, że zarządzamy swym życiem, zamiast je doświadczać i przeżywać. Odzyskanie przestrzeni do życia i działania rozpoczyna się od odkrycia głębszego, całościowego typu uwagi, który pozwoli nam zrozumieć, gdzie jesteśmy. Nie można tego zrobić samotnie.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+      <!-- OPTIONS -->
+      <section class="py-7 border-bottom" id="cele">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+              <!-- Heading -->
+              <h2 class="mb-4">Cztery cele kręgów</h2>
+              <p class="mb-6">Cztery fundamentalne relacje do odbudowania: z innymi mężczyznami, z samym sobą, z naturą i z własnym ciałem.</p>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-6">
+              <div class="card card-cover overflow-hidden text-bg-dark rounded-4">
+                <img src="/assets/img/5.jpg" class="card-img opacity-25" alt="...">
+                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                  <ul class="list-unstyled text-center text-white text-shadow-1">
+                    <li class="display-6 pb-2">Relacje</li>
+                    <li> (Od)budowania relacji z innymi mężczyznami w pracy nad ważnym wyzwaniem (otrzymywanie i dawanie wsparcia)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-6">
+              <div class="card card-cover overflow-hidden text-bg-dark rounded-4">
+                <img src="/assets/img/6.jpg" class="card-img opacity-50" alt="...">
+                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                  <ul class="list-unstyled text-center text-white text-shadow-1">
+                    <li class="display-6 pb-2">Uwaga</li>
+                    <li>(Od)budowania relacji z samym sobą, rozszerzanie swojej uwagi, połączenie z własnymi źródłami mądrości i sensu</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-6">
+              <div class="card card-cover overflow-hidden text-bg-dark rounded-4">
+                <img src="/assets/img/7.jpg" class="card-img opacity-50" alt="...">
+                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                  <ul class="list-unstyled text-center text-white text-shadow-1">
+                    <li class="display-6 pb-2">Natura</li>
+                    <li>(Od)budowanie relacji z naturą</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-6">
+              <div class="card card-cover overflow-hidden text-bg-dark rounded-4">
+                <img src="/assets/img/8.jpg" class="card-img opacity-50" alt="...">
+                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                  <ul class="list-unstyled text-center text-white text-shadow-1">
+                    <li class="display-6 pb-2">Ciało</li>
+                    <li>  (Od)budowanie relacji ze swoim ciałem</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <!-- ARTICLE -->
+    <article class="pt-4 pt-md-8 pb-7 border-bottom" id="metody">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+              <!-- Text -->
+              <h3>Metody pracy</h3>
+              <p>
+                Nie ma dziś jednej metody, która pozwoli nam podjąć wyzwanie, przed którym stoimy. Dlatego reprezentujemy <strong>podejście multimodalne</strong>, które łączy pracę intelektualną z pracą fizyczną, analizę z wyobraźnią, które skupia się na konkretach, a jednocześnie otwiera nas na piękno, dobro i prawdę o nas samych. Nasza praca będzie oparta na trzech filarach
+                <ul>
+                  <li>Sesje grupowego wsparcia. Opieramy się najnowszej literaturze z zakresu neuronauk (Iain McGilchrist – Oxford, Arthur Brooks – Harvard), nauk społecznych (René Girard – Stanford) i sprawdzonych modalnościach rozwojowych (System Wewnętrznej Rodziny rozwijany przez Richarda Schwartza z Harvardu)
+                  <li>Wspólna praca w drewnie, która łączy naturę z kulturą, siłę z precyzją, pracę indywidualną z pracą grupową.</li>
+                  <li>Sesje indywidualne, dialogi i trialogi w najpiękniejszych warmińskich lasach.</li>
+                </ul>  
+              </p>
+            </div>
+          <div class="col-12 col-md-10 col-lg-4">
+              <img class="media-decoration-img img-fluid" src="/assets/img/9.jpg" alt="..." />
+              <!-- Divider -->
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE -->
+    <article class="pt-4 pt-md-8 pb-7 border-bottom" id="faq">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <!-- Heading -->
+            <h1 class="mb-3">Najczęściej zadawane pytania (FAQ)</h1>
+          </div>
+      </div>        
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+            <p>
+              <h3>Czy to jest dla mnie?</h3>
+              Program dla mężczyzn, którzy:
+              <ul>
+                <li>Stoją przed nowym wyzwaniem: chcą sprawdzić nową ścieżkę lub pogłębić dotychczasową,</li>
+                <li>Są liderami w swoich przestrzeniach i szukają inspiracji (poziomu C-level, właściciele firm, menedżerowie wysokiego szczebla, sukcesorzy, ludzie czynu, mentorzy).</li>
+                <li>Chcą prowadzić ludzi bardziej świadomie</li>
+                <li>Nie potrafią się zatrzymać, ale czują już zmęczenie zwycięstwami i/lub mają przeczucie, że życie ma im do zaoferowania coś więcej</li>
+                <li>Chcą korzystać ze swojej mądrości, intuicji i doświadczenia, ale nie chcą podejmować kolejnego wyzwania w samotności.</li>
+                <li>Poszukują głębszego celu, źródła sensu i kierunku</li>
+                <li>Mają dość „zarządzania sobą” i szukają wewnętrznej integracji.</li>
+                <li>Chcą pogłębiać swoją męskość razem z innymi mężczyznami, którzy są na podobnym etapie.</li>
+              </ul>
+            </p>
+            <p>
+              <h3>Na co możesz liczyć?</h3>
+              <ul>
+                <li>Zdefiniujesz źródła sensu i kierunek na kolejną fazę życia.</li>
+                <li>Zrekonstruujesz swój wewnętrzny system operacyjny — przekonania, które dotąd kierowały Twoimi decyzjami.</li>
+                <li>Odkryjesz napięcia, które dotąd napędzały Twoje życie — i nauczysz się nimi kierować.</li>
+                <li>Zidentyfikujesz swoje najważniejsze wyzwanie – granice, które zabierają Ci energię, i siły, które możesz uwolnić.</li>
+                <li>Zwiększysz neuroplastyczność mózgu, żeby zachować wspierają koncentrację, empatię i zdolności poznawczesprawność umysłową i fizyczną poprzez całościowe doświadczenia (praca z ciałem, naturą, ogniem).</li>
+                <li>Zbudujesz głębsze relacje z mężczyznami, którzy — tak jak Ty — szukają prawdy i siły</li>
+              </ul>
+            </p>
+            <p>
+              <h3>Jak wygląda dojazd i nocleg?</h3>
+              Warsztat odbywa się na <a href="https://farmia.org/pl/" target="_blank">Farmii</a>.
+              <ul>
+                <li>Dojazd we własnym zakresie — dokładne współrzędne podamy po rejestracji.</li>
+                <li>Na Farmii znajduje się klimatyczna przestrzeń wspólnej pracy - stodoła z zabytkowymi kilimami i Syreną.</li>
+                <li>Sauna, miejsce ogniska, a wokół rzeki, lasy i jeziora</li>
+                <li>Nocleg w 2-3 osobowych pokojach.</li>
+              </ul>
+            </p>
+            <p>
+              <h3>Czy potrzebuję kondycji?</h3>
+              Nie — tylko gotowości. Nie będziemy się ścigać, ale będziemy pracować ciałem, głosem i oddechem. Warto zabrać ze sobą ubrania robocze do pracy fizycznej.
+            </p>
+            <p>
+              <h3>Czy to bezpieczne?</h3>
+              Tak. Pracujemy w małej, uważnej grupie. Warsztat jest ubezpieczony, a opiekę prowadzą doświadczeni facylitatorzy.              
+            </p>
+            <p>
+              <h3>Jakie są zasady wyjazdu?</h3>
+              <ul>
+                <li>Telefony komórkowe zostawiamy w pokojach</li>
+                <li>Nie pijemy alkoholu</li>
+              </ul>
+            </p>
+      </div>
+    </article>
+
+    <article class="pt-8 pt-md-9" id="plan">
+      <div class="container">
+    
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <h3  class="mb-2">Ramowy plan warsztatu</h3>
+            <p class="mb-6"></p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-10 text-center">
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col" class="text-start">Czwartek</th>
+                  <th scope="col" class="text-start">Piątek</th>
+                  <th scope="col" class="text-start">Sobota</th>
+                  <th scope="col" class="text-start">Niedziela</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start">Rano</th>
+                  <td class="text-start"></td>
+                  <td class="text-start">Pobudka, rozgrzewka, śniadanie</td>
+                  <td class="text-start">Pobudka, rozgrzewka, śniadanie</td>
+                  <td class="text-start">Pobudka, rozgrzewka, śniadanie</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start">Przed południem</th>
+                  <td class="text-start"></td>
+                  <td class="text-start">Wspólna praca w drewnie</td>
+                  <td class="text-start">Wspólna praca w drewnie</td>
+                  <td class="text-start">Wspólna praca w drewnie</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start">Popołudniu</th>
+                  <td class="text-start">Przyjazd</td>
+                  <td class="text-start">Obiad, Krąg głębokiego przywództwa</td>
+                  <td class="text-start">Obiad, Krąg głębokiego przywództwa</td>
+                  <td class="text-start">Powrót</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start">Wieczór</th>
+                  <td class="text-start">Kolacja, Nocne "deep session"</td>
+                  <td class="text-start">Kolacja, Nocne "deep session"</td>
+                  <td class="text-start">Nocne "deep session"</td>
+                  <td class="text-start"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE -->
+    <article class="pt-4 pt-md-8 pb-7" id="kimjestesmy">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8 text-center">
+            <!-- Heading -->
+            <h1 class="mb-3">Kim jesteśmy?</h1>
+  
+            <!-- Subheading -->
+            <p class="mb-6">Dwaj mężczyźni bliżej pięćdziesiątki niż czterdziestki, którzy byli dla siebie wsparciem w najtrudniejszych momentach. Z tej przyjaźni i pracy powstały Kręgi głębokiego przywództwa - przestrzeń, w której mężczyźni uczą się od siebie siły, ciekawości i współczucia.</p>
+          </div>
+      </div>        
+      <div class="row justify-content-center mb-7">
+        <h3>prof. Michał Łuczewski</h3>
+        <div class="col-12 col-lg-7">
+          <p>
+            Praktyk i badacz przywództwa. Socjolog i psycholog ze specjalizacją wspieranie rozwoju osobowości. Specjalizuje się w terapeutycznej modalności IFS (System Wewnętrznej Rodziny) oraz terapii grupowej IFS. Praktyk Polarity Management i LIFE-Orientations. Razem z dr Pauliną Bednarz-Łuczewską współzałożyciel LEAD. School of Experiences, które organizuje programy przywódcze na Oxfordzie. Pracuje na Uniwersytecie Warszawskim jako kierownik IDEAS Lab. Współpracował z licznymi ośrodkami i instytucjami akademickimi na świecie od Columbii po Bolonię. Ojciec czwórki dzieci. Key-note speaker na konferencjach dla mężczyzn, uczestnik pierwszego w Polsce kręgu męskiego zainspirowanego naukami Richarda Rohra. Razem z przyjacielem spłynął canoe z Żoliborza do Morza.
+          </p>
+          <h5>Michał o Kubie</h5>
+          <p>W grupie ojców i dzieci przeszliśmy kilkadziesiąt kilometrów przez góry. No ale jak to czasem bywa, gdy nie ma wokół zapobiegliwej mamy, moja najmłodszą, pięcioletnią córkę zawiało i solidnie się przeziębiła. Wszyscy już poszli, a ja zostałem, bo Miriam przelewała mi się przez ręce, a ja myślałem, że w schronisku „Na Śnieżniku” w jakiś cudowny sposób nabierze sił. Właściciel oferował nam nieużywany pokój, ale kiedy zbliżał się wieczór, wreszcie zebraliśmy się. Z Miriam nie było jednak wiele lepiej. Raz szliśmy nóżka za nóżką, inny razem – brałem ją na barana. Ale w tym wszystkim nie zobaczyłem, że zboczyłem z drogi. Idąc w złą stronę, straciliśmy dwie cenne godziny. Kiedy wróciliśmy na szlak, była już głęboka noc. Zaczęły boleć mnie kolana i wiedziałem, że nie tylko Miriam nie może już iść, ale że ja też już z nią nie pójdę dalej. Wtedy – wbrew wszelkim męskim skrupułom – zadzwoniłem do Kuby i powiedziałem, że nie daję już rady. – Już po Was idę. – usłyszałem krótko. – I przyszedł po nas. Tak zaczęła się nasza przyjaźń.</p>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <img class="media-decoration-img img-fluid" src="/assets/img/10.jpg" alt="..." />
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        
+        <div class="col-12 col-lg-5">
+          <img class="media-decoration-img img-fluid" src="/assets/img/11.jpg" alt="..." />
+        </div>
+        <div class="col-12 col-lg-7 pt-4 pt-lg-0">
+          <h3>Jakub Lipiński</h3>
+          <p>
+            Przedsiębiorca, inwestor, mentor. Absolwent Akademii Górniczo Hutniczej (programowanie), IESE Business School, Leadership Academy for Poland. Założył, prowadził i sprzedał dwie spółki (Apphance, Polidea) firmom z USA (Applause, Showflake). Obecnie współzałożyciel startup’u Inoko Vision pracującym nad wczesnym wykrywaniem chorób neurodegeneracyjnych. Wieloletni członek i przewodniczący rady Klubu Jagiellońskiego. Pomysłodawca i współtwórca aplikacji Pola. Mąż Małgosi i ojciec piątki dzieci. Gospodarz na Farmii. W wolnych chwilach praktykuje ciesielstwo.
+          </p>
+          <h5>Kuba o Michale</h5>
+          <p>Michała po raz pierwszy zobaczyłem w 2009 na spotkaniu poświęconym jednemu z jego tekstów. Jeszcze się nie znaliśmy. Miałem wtedy 30 lat, byłem u początku kariery przedsiębiorcy, dużo czasu zajmowało mi pielęgnowanie swojego wizerunku człowieka wiedzącego i znającego się na wszystkim. Michał zrobił na mnie ogromne wrażenie: zastanawiał się nad każdym zdaniem, opowiadał o swoich słabościach, mówił otwarcie o swoich rozterkach i granicach wiedzy. Swoją moc czerpał ze samoświadomości,  autentyczności i szczerości. Łączył pozornie niezwiązane ze sobą historie, reinterpretował rzeczywistość, odnajdywał w niej głęboki sens. Kilka lat później poznaliśmy się i w grupie czterech ojców zaczęliśmy jeździć na wspólne wyjazdy w góry. Obecność i doświadczenie Michała pomogło mi zrozumieć, czym jest męska przyjaźń.</p>
+        </div>
+
+      </div>
+    </article>
+
+
+    <!-- RESERVATION -->
+    <section class="py-7 py-md-9 bg-light" id="zapiszsie">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <!-- Heading -->
+            <h2 class="mb-2">Zapisz się na warsztat</h2>
+
+            <!-- Subheading -->
+            <p class="mb-6">Wypęłnij krótki formularz, aby zarezerwować miejsce na warsztat.</p>
+            <a class="btn btn-outline-primary mb-7 mb-md-0" href="https://docs.google.com/forms/d/e/1FAIpQLSefBYVTxRslx0z1liaAXAafLpmDiYWQ8p5KBc72ZRK8ZMdiwg/viewform"> Zapisz się</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-7 py-md-9 bg-black">
+      <div class="container px-4">
+        <div class="row gx-7">
+          <div class="col-sm-4">
+            <!-- Heading -->
+            <h5 class="text-xs text-primary">O nas</h5>
+    
+            <!-- Text -->
+            <p class="mb-6">
+              At LEAD. School of Experiences, we empower professionals to become authentic, resilient leaders in the AI era. Our experiential approach blends cutting-edge insight with deep human learning, helping people lead with clarity, courage, and connection in a rapidly evolving world.
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <!-- Heading -->
+            <h5 class="text-xs text-primary">Kontakt</h5>
+    
+            <!-- List -->
+            <ul class="list-unstyled mb-6">
+              <li class="d-flex mb-2">
+                <div class="fas fa-map-marker-alt me-3 mt-2 fs-sm"></div>
+                LEAD. School of Experiences<br>
+                Ul. Wygon 7/5, 01-971 Warszawa<br>
+                NIP: 679-249-39-25
+              </li>
+              <li class="d-flex mb-2">
+                <div class="fas fa-phone me-3 mt-2 fs-sm"></div>
+                +48 576 041 586
+              </li>
+              <li class="d-flex">
+                <div class="far fa-envelope me-3 mt-2 fs-sm"></div>
+                <a href="mailto:pluczewska@schoolofexperiences.org">pluczewska@schoolofexperiences.org</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <!-- Heading -->
+            <h5 class="text-xs text-primary">Śledź nas</h5>
+    
+            <!-- Text -->
+            <div class="mb-3">
+              <a class="text-white text-opacity-75 text-primary-hover" href="https://www.linkedin.com/company/lead-school-of-experiences/">
+                <i class="fab fa-linkedin"></i><a class="text-decoration-none" href="https://www.linkedin.com/company/lead-school-of-experiences/"> LinkedIn</a>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div class="toast position-fixed bottom-0 start-50 translate-middle-x mb-3 mb-md-5" id="notification" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body mx-auto"></div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <!-- Vendor JS -->
+    <script src="./assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.bundle.js"></script>
+  </body>
+</html>
