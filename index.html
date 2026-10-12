@@ -19,6 +19,55 @@
    
     <!-- Theme CSS -->
     <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+
+    <!-- Podsumowania video (sekcja #podsumowania przed footerem) -->
+    <style>
+      .video-summary video {
+        height: auto; /* atrybut height tylko rezerwuje proporcje; bez tego byłby sztywną wysokością w px */
+      }
+      .video-summary .video-play {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 0;
+        background: rgba(0, 0, 0, 0.2);
+        color: #000;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+      .video-summary .video-play:hover,
+      .video-summary .video-play:focus-visible {
+        background: rgba(0, 0, 0, 0.35);
+      }
+      .video-summary .video-play-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.35);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+      }
+      .video-summary .video-play-icon svg {
+        margin-left: 0.3rem; /* optyczne wyśrodkowanie trójkąta */
+      }
+      .video-summary .video-play:hover .video-play-icon,
+      .video-summary .video-play:focus-visible .video-play-icon {
+        background: var(--bs-primary);
+        transform: scale(1.08);
+      }
+      .video-summary.is-playing .video-play {
+        display: none;
+      }
+    </style>
    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -212,7 +261,7 @@
     </nav>
 
     <!-- WELCOME -->
-    <header data-jarallax data-video-src="mp4:/assets/img/wpg.mp4" data-speed=".8" style="background-image: url('/assets/img/1.jpg'); background-size: cover; background-position: center;">
+    <header data-jarallax data-video-src="mp4:/assets/img/wpg-2026-10-hero.mp4" data-speed=".8" style="background-image: url('/assets/img/1.jpg'); background-size: cover; background-position: center;">
       <div class="d-flex flex-column min-vh-100 bg-black bg-opacity-75 pt-10 pt-md-8 pb-7 pb-md-0">
         <div class="container my-auto">
           <div class="row justify-content-center">
@@ -946,6 +995,57 @@
     </div>
   </section>
 
+    <!-- PODSUMOWANIA VIDEO -->
+    <section class="py-7 py-md-9 border-top" id="podsumowania">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8 text-center">
+            <!-- Heading -->
+            <h2 class="mb-7">Zobacz podsumowania video poprzednich edycji</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center gy-6">
+
+          <!-- I edycja: 26 lutego – 1 marca 2026 -->
+          <div class="col-10 col-sm-8 col-md-5 col-lg-4">
+            <figure class="video-summary mb-0">
+              <div class="position-relative bg-black">
+                <video class="d-block w-100" src="/assets/img/wpg-2026-02.mp4" poster="/assets/img/wpg-2026-02.jpg" preload="none" playsinline width="720" height="1280"></video>
+                <button class="video-play" type="button" aria-label="Odtwórz podsumowanie I edycji (26 lutego – 1 marca 2026)">
+                  <span class="video-play-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <figcaption class="text-center mt-4">
+                <h3 class="text-xs text-primary mb-1">I edycja</h3>
+                <p class="mb-0">26 lutego – 1 marca 2026</p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- II edycja: 1–4 października 2026 -->
+          <div class="col-10 col-sm-8 col-md-5 col-lg-4">
+            <figure class="video-summary mb-0">
+              <div class="position-relative bg-black">
+                <video class="d-block w-100" src="/assets/img/wpg-2026-10.mp4" poster="/assets/img/wpg-2026-10.jpg" preload="none" playsinline width="720" height="1280"></video>
+                <button class="video-play" type="button" aria-label="Odtwórz podsumowanie II edycji (1–4 października 2026)">
+                  <span class="video-play-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <figcaption class="text-center mt-4">
+                <h3 class="text-xs text-primary mb-1">II edycja</h3>
+                <p class="mb-0">1–4 października 2026</p>
+              </figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="py-7 py-md-9 bg-black">
       <div class="container px-4">
@@ -1021,5 +1121,37 @@
    
     <!-- Theme JS -->
     <script src="./assets/js/theme.bundle.js"></script>
+
+    <!-- Podsumowania video: overlay Play uruchamia wideo z dźwiękiem -->
+    <script>
+      (() => {
+        const summaries = document.querySelectorAll('.video-summary');
+        summaries.forEach((summary) => {
+          const video = summary.querySelector('video');
+          const button = summary.querySelector('.video-play');
+          if (!video || !button) return;
+
+          button.addEventListener('click', () => {
+            video.muted = false;
+            video.controls = true;
+            const playing = video.play();
+            if (playing) playing.catch(() => {});
+          });
+
+          video.addEventListener('play', () => {
+            summary.classList.add('is-playing');
+            // Tylko jedno wideo naraz
+            summaries.forEach((other) => {
+              const otherVideo = other.querySelector('video');
+              if (otherVideo && otherVideo !== video && !otherVideo.paused) otherVideo.pause();
+            });
+          });
+
+          video.addEventListener('ended', () => {
+            summary.classList.remove('is-playing');
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
